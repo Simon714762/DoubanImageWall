@@ -15,8 +15,8 @@ parser.add_argument('-i', '--id', type=str, required=True, help='User id, or a l
 parser.add_argument('-o', '--offset', type=int, default=13,
                     help='In the first 4 rows, a larger image will occur once every {offset} cells.'
                     'The following rows repeat this pattern. Set to 0 to disable larger images.')
-parser.add_argument('-c', '--col', type=int, default=5, help='Number of columns in the matrix')
-parser.add_argument('-r', '--row', type=int, default=8, help='Number of rows in the matrix')
+parser.add_argument('-c', '--col', type=int, default=10, help='Number of columns in the matrix')
+parser.add_argument('-r', '--row', type=int, default=27, help='Number of rows in the matrix')
 parser.add_argument('-w', '--width', type=int, default=540, help='Width of one cell. A value less than 600 is recommended.')
 parser.add_argument('-ht', '--height', type=int, default=750, help='Height of one cell. A value less than 800 is recommended. Will be the same as cell width in music mode.')
 parser.add_argument('-rd', '--random', type=bool, default=False, help='Whether to shuffle the images')
@@ -27,10 +27,10 @@ parser.add_argument('-m', '--mode', type=str, default='movie', choices=['book', 
 parser.add_argument('-t', '--threshold', type=int, default=300,
                     help='Number of cached images to pertain. Once the number goes beyond this threshold, '
                     'unused cache gets removed. Set to 0 to immediately remove unused cache after a run. Set to negative to disable cache.')
-parser.add_argument('-l', '--limit', type=int, default=200,
+parser.add_argument('-l', '--limit', type=int, default=300,
                     help='Limit of number of items to process. Default is 200. Raise this when COL x ROW > 200.')
-parser.add_argument('--max-width', type=int, default=4000, help='Maximum width of the output in pixel number.')
-parser.add_argument('--max-height', type=int, default=8000, help='Maximum height of the output in pixel number.')
+parser.add_argument('--max-width', type=int, default=12000, help='Maximum width of the output in pixel number.')
+parser.add_argument('--max-height', type=int, default=24000, help='Maximum height of the output in pixel number.')
 args = parser.parse_args()
 _MUSIC_MODE = args.mode == 'music'
 _BOOK_MODE = args.mode == 'book'
