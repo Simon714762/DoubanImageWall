@@ -9,11 +9,6 @@ from io import BytesIO
 from item import Item, get_next_img_url
 from PIL import Image, UnidentifiedImageError
 
-git config --local user.email "action@github.com"
-git config --local user.name "GitHub Action"
-git add .              # Stage all changes (including untracked files)
-git commit -m "Update global image cache and new output"
-git push origin main
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-i', '--id', type=str, required=True, help='User id, or a link containing it')
